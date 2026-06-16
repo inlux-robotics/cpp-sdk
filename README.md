@@ -48,4 +48,4 @@ Once the compiler creates the native binary asset, trigger execution directly vi
 LD_LIBRARY_PATH=./lib ./robot_app
  ```
 
-[![Watch the video](https://youtu.be/JGQjcBxVxYA/0.jpg)](https://youtu.be/JGQjcBxVxYA)
+[![Watch the video](https://img.youtube.com/vi/JGQjcBxVxYA/maxresdefault.jpg)](https://youtu.be/JGQjcBxVxYA)
