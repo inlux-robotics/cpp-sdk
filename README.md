@@ -15,6 +15,20 @@ This repository provides the pre-compiled C++ SDK components and deployment exam
  ┃ ┗ 📜 main.cpp              # Reference tracking implementation (JOG & State)
  ┗ 📜 README.md               # Technical integration manual
 
+ ```text
+📦 fairino-cpp-sdk-distribution
+ ┣ 📂 include                  # Native C++ SDK core header mappings
+ ┃ ┣ 📜 robot.h
+ ┃ ┣ 📜 robot_error.h
+ ┃ ┗ 📜 robot_types.h
+ ┣ 📂 lib/lib                  # Dynamic shared objects binaries (.so)
+ ┃ ┗ 📜 libfairino.so.2.3.6
+ ┃ ┗ 📜 libfairino.so.2
+ ┃ ┗ 📜 libfairino.so
+ ┣ 📜 main.cpp                 # Verified edge tracking implementation script
+ ┗ 📜 README.md                # Infrastructure deployment documentation
+ ```
+
 Technical Prerequisites
 Before initializing compilation tasks, configure your Linux environment with the essential GNU C++ toolchains and build subsystems:
 
@@ -40,3 +54,13 @@ Argument Specifications:
 Launching the Application:
 Once the compiler creates the native binary asset, trigger execution directly via terminal:
 LD_LIBRARY_PATH=./lib ./robot_app
+
+<p align="center">
+  <a href="https://youtu.be/JGQjcBxVxYA" target="_blank">
+    <img src="https://youtu.be/JGQjcBxVxYA/maxresdefault.jpg" alt="Fairino C++ SDK Sequence Demonstration" width="100%" style="border-radius: 8px;">
+  </a>
+</p>
+
+<p align="center">
+  ▶️ <i>Click above to watch the full execution breakdown on YouTube</i>
+</p>
