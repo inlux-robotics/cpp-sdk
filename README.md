@@ -1,1 +1,42 @@
-# cpp-sdk
+# Fairino Cobot C++ SDK Integration Guide (Linux/Ubuntu)
+
+This repository provides the pre-compiled C++ SDK components and deployment examples required to interface with Fairino collaborative robots within a Linux Ubuntu environment.
+
+## Repository Structure
+
+📦 fairino-cpp-sdk-distribution
+ ┣ 📂 include
+ ┃ ┣ 📜 robot.h               # Core SDK framework interface definitions
+ ┃ ┣ 📜 robot_error.h         # Deterministic hardware error system registers
+ ┃ ┗ 📜 robot_types.h         # Kinematic structures (JointPos, DescPose, etc.)
+ ┣ 📂 lib
+ ┃ ┗ 📜 libfairino.so         # Pre-compiled shared object binary library
+ ┣ 📂 examples
+ ┃ ┗ 📜 main.cpp              # Reference tracking implementation (JOG & State)
+ ┗ 📜 README.md               # Technical integration manual
+
+Technical Prerequisites
+Before initializing compilation tasks, configure your Linux environment with the essential GNU C++ toolchains and build subsystems:
+
+Bash
+sudo apt update
+sudo apt install build-essential cmake -y
+
+
+# Compilation and Linkage Protocol
+C++ source objects must explicitly map header inclusions and link the binary shared object target (libfairino.so). Run the standard compilation command from your project root:
+
+
+g++ examples/main.cpp -I./include -L./lib -lfairino -o robot_app -Wl,-rpath,./lib
+
+
+Argument Specifications:
+-I./include: Appends the SDK development headers directory to the primary compiler search path map.
+-L./lib: Declares the search directory containing binary shared object assets used during linking routines.
+-lfairino: Directs the linker to resolve functional symbols against libfairino.so.
+-o robot_app: Determines the name of the final generated native executable binary.
+
+
+Launching the Application:
+Once the compiler creates the native binary asset, trigger execution directly via terminal:
+LD_LIBRARY_PATH=./lib ./robot_app
