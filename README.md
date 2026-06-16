@@ -4,16 +4,6 @@ This repository provides the pre-compiled C++ SDK components and deployment exam
 
 ## Repository Structure
 
-📦 fairino-cpp-sdk-distribution
- ┣ 📂 include
- ┃ ┣ 📜 robot.h               # Core SDK framework interface definitions
- ┃ ┣ 📜 robot_error.h         # Deterministic hardware error system registers
- ┃ ┗ 📜 robot_types.h         # Kinematic structures (JointPos, DescPose, etc.)
- ┣ 📂 lib
- ┃ ┗ 📜 libfairino.so         # Pre-compiled shared object binary library
- ┣ 📂 examples
- ┃ ┗ 📜 main.cpp              # Reference tracking implementation (JOG & State)
- ┗ 📜 README.md               # Technical integration manual
 
  ```text
 📦 fairino-cpp-sdk-distribution
@@ -32,17 +22,17 @@ This repository provides the pre-compiled C++ SDK components and deployment exam
 Technical Prerequisites
 Before initializing compilation tasks, configure your Linux environment with the essential GNU C++ toolchains and build subsystems:
 
-Bash
+ ```text
 sudo apt update
 sudo apt install build-essential cmake -y
-
+ ```
 
 # Compilation and Linkage Protocol
 C++ source objects must explicitly map header inclusions and link the binary shared object target (libfairino.so). Run the standard compilation command from your project root:
 
-
+ ```text
 g++ examples/main.cpp -I./include -L./lib -lfairino -o robot_app -Wl,-rpath,./lib
-
+ ```
 
 Argument Specifications:
 -I./include: Appends the SDK development headers directory to the primary compiler search path map.
@@ -53,7 +43,10 @@ Argument Specifications:
 
 Launching the Application:
 Once the compiler creates the native binary asset, trigger execution directly via terminal:
+
+ ```text
 LD_LIBRARY_PATH=./lib ./robot_app
+ ```
 
 <p align="center">
   <a href="https://youtu.be/JGQjcBxVxYA" target="_blank">
