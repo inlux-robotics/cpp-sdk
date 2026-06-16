@@ -1,0 +1,19 @@
+
+# Reject compiled machine-specific target executables
+program1
+robot_app
+*.out
+*.exe
+
+# Block runtime operational telemetry log output files
+*.log
+fairino.log
+
+# Dismiss raw system archive and transport compressed packages
+*.zip
+*.tar.gz
+*.tgz
+
+# Suppress localized Windows/WSL interoperability metadata attributes
+*:Zone.Identifier
+.DS_Store
