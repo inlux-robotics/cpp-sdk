@@ -48,12 +48,4 @@ Once the compiler creates the native binary asset, trigger execution directly vi
 LD_LIBRARY_PATH=./lib ./robot_app
  ```
 
-<p align="center">
-  <a href="https://youtu.be/JGQjcBxVxYA" target="_blank">
-    <img src="https://youtu.be/JGQjcBxVxYA/maxresdefault.jpg" alt="Fairino C++ SDK Sequence Demonstration" width="100%" style="border-radius: 8px;">
-  </a>
-</p>
-
-<p align="center">
-  ▶️ <i>Click above to watch the full execution breakdown on YouTube</i>
-</p>
+[![Watch the video](https://youtu.be/JGQjcBxVxYA/0.jpg)](https://youtu.be/JGQjcBxVxYA)
